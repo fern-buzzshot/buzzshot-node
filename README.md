@@ -5,18 +5,27 @@
 
 The Buzzshot Node.js library provides access to the Buzzshot API from JavaScript/TypeScript.
 
-## Documentation
-
-API reference documentation is available [here](docs_url).
 
 ## Usage
 
-[![Try it out](https://developer.stackblitz.com/img/open_in_stackblitz.svg)](TODO)
+[![Try it out](https://developer.stackblitz.com/img/open_in_stackblitz.svg)](https://stackblitz.com/edit/typescript-example-using-sdk-built-with-fern-mbgkgg?file=app.ts)
 
 ```typescript
-import { TODO } from "TODO";
+import { BuzzshotApiClient } from '@fern-api/buzzshot';
 
-const TODO
+void main();
+
+async function main() {
+  const client = new BuzzshotApiClient({
+    environment: 'BuzzshotAPIEnvironment',
+  });
+  const response = await client.listGames({
+    page: 2,
+    date: '2023-01-17T08:44:29+0100',
+  });
+
+  console.log('Received response from Buzzshot!', response);
+}
 ```
 
 ## Beta status
